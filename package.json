@@ -1,0 +1,16 @@
+{
+  "name": "rate-component",
+  "version": "1.0.0",
+  "description": "Rate component for menu app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-iconset-svg": "^3.0.1",
+    "@polymer/lit-element": "^0.7.1"
+  }
+}
