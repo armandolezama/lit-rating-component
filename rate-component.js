@@ -23,14 +23,13 @@ export class RateComponent extends LitElement {
         for (const star of stars) {
             star.addEventListener('click', () => {
                 this.rate = star.id;
+                this.__getRate(stars, star.id)
             });
         };
-        console.log(this.rate);
-        this.__getRate(stars)
     }
 
-    __getRate(stars) {
-        for (let index = 0; index < this.rate; index++) {
+    __getRate(stars, limit) {
+        for (let index = 0; index < limit; index++) {
             const star = stars[index];
             star.classList.add('active');
         };
