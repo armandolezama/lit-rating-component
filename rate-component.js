@@ -15,8 +15,6 @@ export class RateComponent extends LitElement {
     }
 
     __onClick() {
-        console.log('event fired');
-        console.log(this.rate);
         const stars = this.shadowRoot.querySelectorAll('.star');
         this.__clearStar(stars);
 
