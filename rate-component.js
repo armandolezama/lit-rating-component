@@ -14,20 +14,45 @@ export class RateComponent extends LitElement {
         };
     }
 
-    __onClick() {
+    __onClick1() {
         const stars = this.shadowRoot.querySelectorAll('.star');
         this.__clearStar(stars);
-
-        for (const star of stars) {
-            star.addEventListener('click', () => {
-                this.rate = parseInt(star.id);
-                this.__getRate(stars, parseInt(star.id))
-            });
-        };
-
+        this.rate = 1
+        this.__getRate(stars, 1)
         this.dispatchEvent(new Event('rate-changed'));
     }
 
+    __onClick2() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
+        this.__clearStar(stars);
+        this.rate = 2
+        this.__getRate(stars, 2)
+        this.dispatchEvent(new Event('rate-changed'));
+    }
+
+    __onClick3() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
+        this.__clearStar(stars);
+        this.rate = 3
+        this.__getRate(stars, 3)
+        this.dispatchEvent(new Event('rate-changed'));
+    }
+
+    __onClick4() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
+        this.__clearStar(stars);
+        this.rate = 4
+        this.__getRate(stars, 4)
+        this.dispatchEvent(new Event('rate-changed'));
+    }
+
+    __onClick5() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
+        this.__clearStar(stars);
+        this.rate = 5
+        this.__getRate(stars, 5)
+        this.dispatchEvent(new Event('rate-changed'));
+    }
     __getRate(stars, limit) {
         for (let index = 0; index < limit; index++) {
             const star = stars[index];
@@ -67,11 +92,11 @@ export class RateComponent extends LitElement {
         </iron-iconset-svg>
         
             <div class="rating-container">
-                <iron-icon id="1" @click="${this.__onClick}" class="star" icon="rating:star"></iron-icon>
-                <iron-icon id="2" @click="${this.__onClick}" class="star" icon="rating:star"></iron-icon>
-                <iron-icon id="3" @click="${this.__onClick}" class="star" icon="rating:star"></iron-icon>
-                <iron-icon id="4" @click="${this.__onClick}" class="star" icon="rating:star"></iron-icon>
-                <iron-icon id="5" @click="${this.__onClick}" class="star" icon="rating:star"></iron-icon>
+                <iron-icon @click="${this.__onClick1}" class="star" icon="rating:star"></iron-icon>
+                <iron-icon @click="${this.__onClick2}" class="star" icon="rating:star"></iron-icon>
+                <iron-icon @click="${this.__onClick3}" class="star" icon="rating:star"></iron-icon>
+                <iron-icon @click="${this.__onClick4}" class="star" icon="rating:star"></iron-icon>
+                <iron-icon @click="${this.__onClick5}" class="star" icon="rating:star"></iron-icon>
             </div>
         `;
     }
