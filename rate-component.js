@@ -15,52 +15,49 @@ export class RateComponent extends LitElement {
     }
 
     __onClick1() {
-        const stars = this.shadowRoot.querySelectorAll('.star');
-        this.__clearStar(stars);
+        this.__clearStar();
         this.rate = 1
-        this.__getRate(stars, 1)
+        this.__getRate()
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick2() {
-        const stars = this.shadowRoot.querySelectorAll('.star');
-        this.__clearStar(stars);
+        this.__clearStar();
         this.rate = 2
-        this.__getRate(stars, 2)
+        this.__getRate()
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick3() {
-        const stars = this.shadowRoot.querySelectorAll('.star');
-        this.__clearStar(stars);
+        this.__clearStar();
         this.rate = 3
-        this.__getRate(stars, 3)
+        this.__getRate()
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick4() {
-        const stars = this.shadowRoot.querySelectorAll('.star');
-        this.__clearStar(stars);
+        this.__clearStar();
         this.rate = 4
-        this.__getRate(stars, 4)
+        this.__getRate()
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick5() {
-        const stars = this.shadowRoot.querySelectorAll('.star');
-        this.__clearStar(stars);
+        this.__clearStar();
         this.rate = 5
-        this.__getRate(stars, 5)
+        this.__getRate()
         this.dispatchEvent(new Event('rate-changed'));
     }
-    __getRate(stars, limit) {
-        for (let index = 0; index < limit; index++) {
+    __getRate() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
+        for (let index = 0; index < this.rate; index++) {
             const star = stars[index];
             star.classList.add('active');
         };
     }
 
-    __clearStar(stars) {
+    __clearStar() {
+        const stars = this.shadowRoot.querySelectorAll('.star');
         for (const star of stars) {
             star.classList.remove('active');
         };
