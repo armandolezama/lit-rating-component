@@ -20,16 +20,12 @@ export class RateComponent extends LitElement {
 
         for (const star of stars) {
             star.addEventListener('click', () => {
-                this.rate = star.id;
-                this.__getRate(stars, star.id)
+                this.rate = parseInt(star.id);
+                this.__getRate(stars, parseInt(star.id))
             });
         };
 
-        this.dispatchEvent(new CustomEvent('rate-changed', {
-            detail: {
-                rate: this.rate
-            }
-        }));
+        this.dispatchEvent(new Event('rate-changed'));
     }
 
     __getRate(stars, limit) {
