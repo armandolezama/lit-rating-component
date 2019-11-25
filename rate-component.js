@@ -20,35 +20,30 @@ export class RateComponent extends LitElement {
     __onClick1() {
         this.__clearStar();
         this.rate = 1;
-        this.__getRate();
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick2() {
         this.__clearStar();
         this.rate = 2;
-        this.__getRate();
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick3() {
         this.__clearStar();
         this.rate = 3;
-        this.__getRate();
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick4() {
         this.__clearStar();
         this.rate = 4;
-        this.__getRate();
         this.dispatchEvent(new Event('rate-changed'));
     }
 
     __onClick5() {
         this.__clearStar();
         this.rate = 5;
-        this.__getRate();
         this.dispatchEvent(new Event('rate-changed'));
     }
     __getRate() {
@@ -66,7 +61,7 @@ export class RateComponent extends LitElement {
         };
     }
 
-    firstUpdated(changedProperties) {
+    updated(changedProperties) {
         this.__getRate()
     }
 
