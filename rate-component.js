@@ -24,6 +24,12 @@ export class RateComponent extends LitElement {
                 this.__getRate(stars, star.id)
             });
         };
+
+        this.dispatchEvent(new CustomEvent('rate-changed', {
+            detail: {
+                rate: this.rate
+            }
+        }));
     }
 
     __getRate(stars, limit) {
